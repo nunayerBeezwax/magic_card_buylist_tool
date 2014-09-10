@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: cardshark_development
+
+test:
+  adapter: postgresql
+  database: cardshark_test

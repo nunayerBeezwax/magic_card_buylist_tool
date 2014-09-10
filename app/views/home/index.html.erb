@@ -1,0 +1,36 @@
+<h1>PicAIune Quiz Machine</h1>
+
+<h3>PicAIune can currently answer only multiple choice questions, please enter your question in the text box below along with 2 or more possible answer choices and press "Cross Your Fingers"! <br> Then push "Show me the Answer" to receive PicAIune's response.</h3>
+
+<div class="question_form">
+		<%= form_for @question do |f| %>
+			<%= f.label :text, "Your Question Here" %>
+			<%= f.text_area :text, :cols => 35, :rows => 5 %><br>
+			<%= f.label :choice1 %>
+			<%= f.text_field :choice1 %><br>
+			<%= f.label :choice2 %>	
+			<%= f.text_field :choice2 %><br>
+			<%= f.label :choice3 %>	
+			<%= f.text_field :choice3 %><br>
+			<%= f.label :choice4 %>
+			<%= f.text_field :choice4 %><br>
+			<%= f.submit "Cross Your Fingers" %>
+		<% end %> 
+</div>
+
+<% unless Question.all.last.text.blank? %>
+	<%= button_to "Show me the Answer", question_path(Question.all.last.id), method: :patch %>
+<% end %>
+
+<% if Question.all.last %>
+	<% unless Question.all.last.text.blank? %>
+		<strong><%= "I think this is a \"#{Question.all.last.question_type}\" question" %><br>
+		<%= "The operative word or phrase appears to be \"#{Question.all.last.operative_word.gsub(/%20/, ' ')}\"" %></strong>
+	<%end%>
+<%end%>
+
+<div class="answer">
+<% unless Question.all.last.answer.blank? %>
+	<%= Question.all.last.answer %>
+	<%end %>
+</div>

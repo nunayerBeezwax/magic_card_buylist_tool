@@ -1,0 +1,39 @@
+html body {
+  background: url('background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+h1 {
+  position: relative;
+  font-family:"Georgia", serif;
+  font-size: 50px;
+  color: #EEE;
+  text-shadow: 4px 4px 1px #300000;
+}
+
+h3 {
+  position: relative;
+  font-family:"Georgia", serif;
+  font-size: 15px;
+}
+
+.question_form {
+  position: relative;
+  vertical-align: center;
+  width: 100%;
+  padding-top: 20px;
+  font-family:"Georgia", serif;
+}
+
+.answer {
+  font-size: 100px; 
+}
